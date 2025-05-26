@@ -51,7 +51,7 @@ Para executar localmente:
 
 ```shell
 # Primeiro: Clone o repositório
-git clone https://github.com/marcuspionerfiap/challengeVeiculos.git
+git clone https://github.com/marcuspioner/challengeVeiculos.git
 cd challengeVeiculos/
 
 # Segundo: Suba o banco de dados com Docker
