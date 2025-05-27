@@ -20,7 +20,7 @@ public class VeiculoController {
             summary = "Cadastrar veículo",
             description = "Realiza o cadastro de um veículo."
     )
-    @PostMapping
+    @PostMapping("/cadastrar")
     public ResponseEntity<Veiculo> cadastrar(@RequestBody @Valid Veiculo veiculo) {
         return ResponseEntity.status(HttpStatus.CREATED).body(veiculoService.cadastrar(veiculo));
     }
@@ -29,7 +29,7 @@ public class VeiculoController {
             summary = "Editar veículo",
             description = "Realiza a edição de um veículo cadastrado."
     )
-    @PutMapping("/{id}")
+    @PutMapping("/editar/{id}")
     public ResponseEntity<Veiculo> editar(@PathVariable Long id, @RequestBody Veiculo veiculo) {
         return ResponseEntity.ok(veiculoService.editar(id, veiculo));
     }
