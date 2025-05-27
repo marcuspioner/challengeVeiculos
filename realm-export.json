@@ -1,6 +1,26 @@
 {
   "realm": "challenge",
   "enabled": true,
+  "roles": {
+    "realm": [
+      {
+        "name": "ROLE_USER",
+        "description": "Role de usuário padrão"
+      },
+      {
+        "name": "ROLE_ADMIN",
+        "description": "Administrador"
+      }
+    ],
+    "client": {
+      "challenge-veiculos-api": [
+        {
+          "name": "user",
+          "description": "Client-level role"
+        }
+      ]
+    }
+  },
   "users": [
     {
       "username": "admin",
@@ -15,21 +35,19 @@
           "value": "admin",
           "temporary": false
         }
-      ]
+      ],
+      "realmRoles": ["ROLE_USER", "ROLE_ADMIN"]
     }
   ],
   "clients": [
     {
       "clientId": "challenge-veiculos-api",
       "enabled": true,
-      "publicClient": false,
-      "secret": "client-secret",
+      "publicClient": true,
+      "redirectUris": ["*"],
+      "webOrigins": ["*"],
       "protocol": "openid-connect",
-      "redirectUris": ["http://localhost:8081/*"],
-      "webOrigins": ["+"],
-      "standardFlowEnabled": true,
-      "directAccessGrantsEnabled": true
+      "standardFlowEnabled": true
     }
   ]
-
 }
