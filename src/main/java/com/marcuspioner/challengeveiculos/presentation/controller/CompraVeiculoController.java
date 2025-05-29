@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Objects;
+
 @RestController
 @RequestMapping("/veiculos")
 public class CompraVeiculoController {
@@ -16,11 +18,19 @@ public class CompraVeiculoController {
     @Autowired
     private VeiculoService veiculoService;
 
+
     @PostMapping("/comprar/{id}")
     public ResponseEntity<String> comprar(@PathVariable Long id) {
-        Veiculo veiculo = veiculoService.editar(id, new Veiculo());
+
+        Veiculo veiculo = veiculoService.buscarVeiculoPorId(id);
+
+        if (Objects.isNull(veiculo)) {
+            return ResponseEntity.notFound().build();
+        }
+
         veiculo.setVendido(true);
         veiculoService.cadastrar(veiculo);
-        return ResponseEntity.ok("Compra realizada com sucesso!");
+
+        return ResponseEntity.ok("Parabéns, compra realizada com sucesso!");
     }
 }

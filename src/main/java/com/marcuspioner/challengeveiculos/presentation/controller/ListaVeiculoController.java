@@ -4,6 +4,7 @@ import com.marcuspioner.challengeveiculos.application.service.ListaVeiculoServic
 import com.marcuspioner.challengeveiculos.domain.model.Veiculo;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,8 +23,8 @@ public class ListaVeiculoController {
             description = "Busca uma lista de veículos cadastrados que estão à venda."
     )
     @GetMapping("/listaVeiculosAVenda")
-    public List<Veiculo> listaVeiculosAVenda() {
-        return listaVeiculoService.listarVeiculosAVendaPorPreco();
+    public ResponseEntity<List<Veiculo>> listaVeiculosAVenda() {
+        return ResponseEntity.ok(listaVeiculoService.listarVeiculosAVendaPorPreco());
     }
 
     @Operation(
@@ -31,7 +32,7 @@ public class ListaVeiculoController {
             description = "Busca uma lista de veículos cadastrados que estão vendidos."
     )
     @GetMapping("/listaVeiculosVendidos")
-    public List<Veiculo> listaVeiculosVendidos() {
-        return listaVeiculoService.listarVeiculosVendidosPorPreco();
+    public ResponseEntity<List<Veiculo>> listaVeiculosVendidos() {
+        return ResponseEntity.ok(listaVeiculoService.listarVeiculosVendidosPorPreco());
     }
 }

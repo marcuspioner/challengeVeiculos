@@ -21,4 +21,19 @@ public class Veiculo {
     private String modelo;
     private BigDecimal preco;
     private Boolean vendido;
+
+    public Veiculo() {
+
+    }
+
+    public Veiculo(Long id, Integer ano, String cor, String marca, String modelo, BigDecimal preco, Boolean vendido) {
+        this.id = id;
+        this.ano = ano;
+        this.cor = cor;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.preco = preco;
+        this.vendido = vendido;
+    }
+
 }
