@@ -1,4 +1,4 @@
-package com.marcuspioner.challengeveiculos;
+package com.marcuspioner.challengeveiculos.application;
 
 import com.marcuspioner.challengeveiculos.application.service.ListaVeiculoService;
 import com.marcuspioner.challengeveiculos.application.service.VeiculoService;
@@ -60,7 +60,7 @@ class VeiculoServiceTest {
         novoVeiculo.setModelo("Uno");
         novoVeiculo.setPreco(BigDecimal.valueOf(20000.0));
 
-        when(veiculoRepository.buscarVeiculoPorId(id)).thenReturn(Optional.of(veiculoExistente));
+        when(veiculoRepository.buscarPorId(id)).thenReturn(Optional.of(veiculoExistente));
         when(veiculoRepository.salvarVeiculo(veiculoExistente)).thenReturn(veiculoExistente);
 
         Veiculo resultado = veiculoService.editar(id, novoVeiculo);
@@ -77,7 +77,7 @@ class VeiculoServiceTest {
         Long id = 1L;
         Veiculo veiculo = new Veiculo();
 
-        when(veiculoRepository.buscarVeiculoPorId(id)).thenReturn(Optional.empty());
+        when(veiculoRepository.buscarPorId(id)).thenReturn(Optional.empty());
 
         RuntimeException exception = assertThrows(RuntimeException.class, () ->
                 veiculoService.editar(id, veiculo)

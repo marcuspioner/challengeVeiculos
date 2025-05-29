@@ -9,11 +9,12 @@ public interface VeiculoRepository {
 
     Veiculo salvarVeiculo(Veiculo veiculo);
 
-    Optional<Veiculo> buscarVeiculoPorId(Long id);
+    Optional<Veiculo> buscarPorId(Long id);
 
     List<Veiculo> listarVeiculosAVendaPorPreco();
 
     List<Veiculo> listarVeiculosVendidosPorPreco();
 
 }
+
 

@@ -16,7 +16,7 @@ public class VeiculoService {
     }
 
     public Veiculo editar(Long id, Veiculo veiculoDB) {
-        Veiculo veiculo = veiculoRepository.buscarVeiculoPorId(id)
+        Veiculo veiculo = veiculoRepository.buscarPorId(id)
                 .orElseThrow(() -> new RuntimeException("Cadastro de veículo não encontrado!"));
 
         veiculo.setAno(veiculoDB.getAno());
@@ -27,4 +27,9 @@ public class VeiculoService {
 
         return veiculoRepository.salvarVeiculo(veiculo);
     }
+
+    public Veiculo buscarVeiculoPorId(Long id) {
+        return veiculoRepository.buscarPorId(id).orElse(null);
+    }
+
 }

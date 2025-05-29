@@ -1,53 +1,33 @@
 {
-  "realm": "challenge",
+  "realm": "challengeVeiculos",
   "enabled": true,
-  "roles": {
-    "realm": [
-      {
-        "name": "ROLE_USER",
-        "description": "Role de usuário padrão"
-      },
-      {
-        "name": "ROLE_ADMIN",
-        "description": "Administrador"
-      }
-    ],
-    "client": {
-      "challenge-veiculos-api": [
-        {
-          "name": "user",
-          "description": "Client-level role"
-        }
-      ]
-    }
-  },
-  "users": [
-    {
-      "username": "admin",
-      "enabled": true,
-      "emailVerified": true,
-      "firstName": "Admin",
-      "lastName": "User",
-      "email": "admin@example.com",
-      "credentials": [
-        {
-          "type": "password",
-          "value": "admin",
-          "temporary": false
-        }
-      ],
-      "realmRoles": ["ROLE_USER", "ROLE_ADMIN"]
-    }
-  ],
   "clients": [
     {
-      "clientId": "challenge-veiculos-api",
+      "clientId": "challenge",
       "enabled": true,
       "publicClient": true,
       "redirectUris": ["*"],
       "webOrigins": ["*"],
       "protocol": "openid-connect",
+      "directAccessGrantsEnabled": true,
       "standardFlowEnabled": true
+    }
+  ],
+  "users": [
+    {
+      "username": "marcus",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Usuário",
+      "lastName": "Teste",
+      "email": "usuario1@challenge.com",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "123456",
+          "temporary": false
+        }
+      ]
     }
   ]
 }

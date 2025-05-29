@@ -12,25 +12,26 @@ import java.util.Optional;
 public class VeiculoRepositoryImpl implements VeiculoRepository {
 
     @Autowired
-    private VeiculoSdRepository jpa;
+    private VeiculoSdRepository veiculoSdRepository;
 
     @Override
     public Veiculo salvarVeiculo(Veiculo veiculo) {
-        return jpa.save(veiculo);
+        return veiculoSdRepository.save(veiculo);
     }
 
     @Override
-    public Optional<Veiculo> buscarVeiculoPorId(Long id) {
-        return jpa.findById(id);
+    public Optional<Veiculo> buscarPorId(Long id) {
+        return veiculoSdRepository.findById(id);
     }
 
     @Override
     public List<Veiculo> listarVeiculosAVendaPorPreco() {
-        return jpa.findByVendidoFalseOrderByPrecoAsc();
+        return veiculoSdRepository.findByVendidoFalseOrderByPrecoAsc();
     }
 
     @Override
     public List<Veiculo> listarVeiculosVendidosPorPreco() {
-        return jpa.findByVendidoTrueOrderByPrecoAsc();
+        return veiculoSdRepository.findByVendidoTrueOrderByPrecoAsc();
     }
 }
+

@@ -47,19 +47,7 @@ Pré-requisitos:
 -  **Maven: 3.+**
 -  **Docker e Docker Compose**
 
-Para executar localmente:
-
-```shell
-# Primeiro: Clone o repositório
-git clone https://github.com/marcuspioner/challengeVeiculos.git
-cd challengeVeiculos/
-
-# Segundo: Suba o banco de dados com Docker
-docker-compose up -d
-
-# Terceiro: Rode a aplicação localmente
-./mvnw spring-boot:run
-```
+---
 
 Para executar via docker compose:
 
@@ -78,7 +66,7 @@ Após a execução dos comandos acima, será possível acessar o Swagger por mei
 http://localhost:8081/swagger-ui/index.html
 ```
 
-Este endpoint permite o teste das funcionalidades da aplicação pela web.
+Este endpoint permite o teste das funcionalidades da aplicação via swagger.
 
 ---
 
