@@ -9,6 +9,7 @@
       "redirectUris": ["*"],
       "webOrigins": ["*"],
       "protocol": "openid-connect",
+      "directAccessGrantsEnabled": true,
       "standardFlowEnabled": true
     }
   ],
