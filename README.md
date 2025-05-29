@@ -6,6 +6,12 @@
 
 API desenvolvida como plataforma para revenda de veículos.
 
+Acesso ao vídeo de demonstração em: 
+
+```http request
+https://youtu.be/2wsC4H0Nokc
+```
+
 ---
 
 ## Tecnologias Utilizadas
