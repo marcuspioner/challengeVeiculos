@@ -35,6 +35,7 @@
 			**/config/**/*,
 			**/domain/model/**/*,
 			**/infrastructure/persistance/**/*,
+			**/presentation/controller/**/*,
 			**/ChallengeveiculosApplication.java
 		</sonar.exclusions>
 	</properties>
